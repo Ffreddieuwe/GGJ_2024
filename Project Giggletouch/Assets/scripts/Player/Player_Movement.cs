@@ -95,8 +95,6 @@ public class Player_Movement : MonoBehaviour
 
         anim.SetBool(hash.sprintBool, sprinting);
 
-        Debug.Log(vertical);
-        Debug.Log(horizontal);
 
         if (vertical != 0)
         {
@@ -120,6 +118,7 @@ public class Player_Movement : MonoBehaviour
 
     void AudioManagement()
     {
+        /*
         if (walking)
         {
             if (!GetComponent<AudioSource>().isPlaying)
@@ -140,6 +139,7 @@ public class Player_Movement : MonoBehaviour
         {
             GetComponent<AudioSource>().Stop();
         }
+        */
     }
 
 }
