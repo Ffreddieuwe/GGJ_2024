@@ -7,7 +7,10 @@ public class gastrigger : MonoBehaviour
 {
     public PostProcessProfile postProcessProfile;
     private ChromaticAberration chromaticAberration;
-    private Grain grain; 
+    private Grain grain;
+    public float decayTime = 5.0f;
+    private bool inGas = false;
+    public float increasedValue = 0.0f;
 
     private void Start()
     {
@@ -23,9 +26,34 @@ public class gastrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            chromaticAberration.intensity.Override(chromaticAberration.intensity.value + 0.2f * Time.deltaTime);
-            grain.intensity.Override(grain.intensity.value + 0.1f * Time.deltaTime);
-            grain.size.Override(grain.size.value + 0.5f * Time.deltaTime);
+            decayTime = 5.0f;
+            inGas = true;
+
+            increasedValue += 0.5f * Time.deltaTime; 
+
+            chromaticAberration.intensity.Override(increasedValue);
+            grain.intensity.Override(increasedValue);
+            grain.size.Override(increasedValue);
         }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        inGas = false;
+        increasedValue = 0.0f;
+    }
+
+    private void FixedUpdate()
+    {
+        decayTime -= 1 * Time.deltaTime;
+
+        if (!inGas && decayTime <= 0.0f)
+        {
+            chromaticAberration.intensity.Override(chromaticAberration.intensity.value - 0.6f * Time.deltaTime);
+            grain.intensity.Override(grain.intensity.value - 0.5f * Time.deltaTime);
+            grain.size.Override(grain.size.value - 1f * Time.deltaTime);
+        }
+
+    }
+
 }
