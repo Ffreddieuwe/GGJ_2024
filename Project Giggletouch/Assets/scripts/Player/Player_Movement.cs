@@ -15,6 +15,9 @@ public class Player_Movement : MonoBehaviour
     private Animator anim;
     private HashIDs hash;
 
+    private bool walking;
+    private bool running;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,17 +35,33 @@ public class Player_Movement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        running = false;
+        walking = false;
+
         float v = Input.GetAxis("Vertical");
         float h = Input.GetAxis("Horizontal");
         float turn = Input.GetAxis("Turn");
         bool sprint = Input.GetButton("Sprint");
         bool jump = Input.GetButton("Jump");
 
+        if(v!=0 || h!=0)
+        {
+            if (sprint)
+            {
+                running = true;
+            }
+            else
+            {
+                walking = true;
+            }
+        }
+
         Movement(v, sprint, h);
 
 
         anim.SetBool(hash.jumpBool, jump);
 
+        AudioManagement();
 
         Rotate(turn);
 
@@ -54,8 +73,20 @@ public class Player_Movement : MonoBehaviour
 
         if (turn != 0)
         {
-            Quaternion deltaRotation = Quaternion.Euler(0f, turn * sensitivityX * 3, 0f);
+            float temp = 0.0f;
+
+            if (turn>0)
+            {
+                temp = 30000.0f;
+            }
+            else
+            {
+                temp = -30000.0f;
+            }
+
+            Quaternion deltaRotation = Quaternion.Euler(0f, temp * sensitivityX * 3, 0f);
             body.MoveRotation(body.rotation * deltaRotation);
+
         }
     }
 
@@ -64,8 +95,6 @@ public class Player_Movement : MonoBehaviour
 
         anim.SetBool(hash.sprintBool, sprinting);
 
-        Debug.Log(vertical);
-        Debug.Log(horizontal);
 
         if (vertical != 0)
         {
@@ -85,6 +114,32 @@ public class Player_Movement : MonoBehaviour
             anim.SetFloat(hash.speedFloatH, 0);
         }
 
+    }
+
+    void AudioManagement()
+    {
+        /*
+        if (walking)
+        {
+            if (!GetComponent<AudioSource>().isPlaying)
+            {
+                GetComponent<AudioSource>().pitch = 1f;
+                GetComponent<AudioSource>().Play();
+            }
+        }
+        else if (running)
+        {
+            if (!GetComponent<AudioSource>().isPlaying)
+            {
+                GetComponent<AudioSource>().pitch = 1.15f;
+                GetComponent<AudioSource>().Play();
+            }
+        }
+        else
+        {
+            GetComponent<AudioSource>().Stop();
+        }
+        */
     }
 
 }
