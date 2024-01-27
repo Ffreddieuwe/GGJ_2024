@@ -124,7 +124,7 @@ public class Player_Movement : MonoBehaviour
         {
             if (!GetComponent<AudioSource>().isPlaying)
             {
-                GetComponent<AudioSource>().pitch = 0.27f;
+                GetComponent<AudioSource>().pitch = 1f;
                 GetComponent<AudioSource>().Play();
             }
         }
@@ -132,7 +132,7 @@ public class Player_Movement : MonoBehaviour
         {
             if (!GetComponent<AudioSource>().isPlaying)
             {
-                GetComponent<AudioSource>().pitch = 0.27f;
+                GetComponent<AudioSource>().pitch = 1.15f;
                 GetComponent<AudioSource>().Play();
             }
         }
