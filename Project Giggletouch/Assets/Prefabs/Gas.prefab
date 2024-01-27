@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.557, y: 1.471, z: 1.5900002}
-  m_LocalScale: {x: 3.243183, y: 2.9245691, z: 6.7836}
+  m_LocalScale: {x: 4.469106, y: 2.7008688, z: 6.7836}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -687,8 +687,8 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 18
-    angle: 25
+    type: 4
+    angle: 36
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
@@ -774,7 +774,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 1
+      value: 0.06
       mode: 0
       spread: 0
       speed:
@@ -4863,4 +4863,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86747564fdb71324ea4e3ac09089c853, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hazyVision: {fileID: 0}
+  postProcessProfile: {fileID: 0}
+  decayTime: 5
