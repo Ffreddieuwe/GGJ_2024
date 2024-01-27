@@ -10,10 +10,18 @@ public class Player_Movement : MonoBehaviour
     public float animationSpeedV = 1.5f;
     public float animationSpeedH = 1.5f;
 
+    bool lockedCursor = true;
+
     private Animator anim;
     private HashIDs hash;
 
     // Start is called before the first frame update
+    void Start()
+    {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
     void Awake()
     {
         anim = GetComponent<Animator>();
@@ -34,10 +42,10 @@ public class Player_Movement : MonoBehaviour
 
 
         anim.SetBool(hash.jumpBool, jump);
-        
+
 
         Rotate(turn);
-        
+
     }
 
     void Rotate(float turn)
