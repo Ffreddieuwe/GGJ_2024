@@ -35,10 +35,5 @@ public class gastrigger : MonoBehaviour
         gasReaction.inGas = false; 
     }
 
-    private void FixedUpdate()
-    {
-
-
-    }
 
 }
