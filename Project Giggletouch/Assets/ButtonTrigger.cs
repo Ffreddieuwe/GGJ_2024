@@ -7,9 +7,14 @@ public class ButtonTrigger : MonoBehaviour
     public GameObject door;
     private bool inzone;
 
+    public AudioSource audioSource;
+    public AudioClip audioClip;
+
+
     private void Start()
     {
         inzone = false;
+
     }
 
     private void Update()
@@ -19,6 +24,7 @@ public class ButtonTrigger : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 door.GetComponent<DoorTrigger>().unlocked = true;
+                audioSource.PlayOneShot(audioClip);
             }
         }
     }
