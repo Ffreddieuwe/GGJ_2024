@@ -10,6 +10,9 @@ public class Player_Movement : MonoBehaviour
     public float animationSpeedV = 1.5f;
     public float animationSpeedH = 1.5f;
 
+    public AudioSource audioSource;
+    public AudioClip audioClip;
+
     bool lockedCursor = true;
 
     private Animator anim;
@@ -118,28 +121,22 @@ public class Player_Movement : MonoBehaviour
 
     void AudioManagement()
     {
-        /*
         if (walking)
         {
-            if (!GetComponent<AudioSource>().isPlaying)
+            if (!audioSource.isPlaying)
             {
-                GetComponent<AudioSource>().pitch = 1f;
-                GetComponent<AudioSource>().Play();
+                //audioSource.pitch = 1f;
+                audioSource.PlayOneShot(audioClip);
             }
         }
         else if (running)
         {
-            if (!GetComponent<AudioSource>().isPlaying)
+            if (!audioSource.isPlaying)
             {
-                GetComponent<AudioSource>().pitch = 1.15f;
-                GetComponent<AudioSource>().Play();
+// audioSource.pitch = 1.25f;
+                audioSource.PlayOneShot(audioClip);
             }
         }
-        else
-        {
-            GetComponent<AudioSource>().Stop();
-        }
-        */
     }
 
 }

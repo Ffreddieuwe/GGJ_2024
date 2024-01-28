@@ -7,17 +7,8 @@ public class InventoryLogic : MonoBehaviour
     // Start is called before the first frame update
     public GasReaction gasReaction;
     public bool gotKey = false;
-    public bool gotMask
-    {
-        get => gotMask;
-        set
-        {
-            if (value == true)
-            {
-                gasReaction.decayRate = 0.01f;
-            }
-        }
-    }
+    public bool gotMask = false;
+   
     
     void Start()
     {
