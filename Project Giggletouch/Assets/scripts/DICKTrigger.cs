@@ -10,6 +10,7 @@ public class DICKTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+
             DICKInjector.SetActive(false);
         }
     }
