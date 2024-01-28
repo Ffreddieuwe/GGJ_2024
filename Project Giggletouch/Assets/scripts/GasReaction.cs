@@ -14,11 +14,11 @@ public class GasReaction : MonoBehaviour
     private Grain grain;
 
     public AudioClip audioClip;
-    public AudioSource audioSource; 
+    public AudioSource audioSource;
     public float volume = 0.5f;
-    private bool alerted = false;
+    public bool alerted = false;
 
-    public float decayRate = 0.05f;
+    public float decayRate = 0.1f;
     public float decayTime = 5.0f;
     public bool inGas = false;
     public float increasedValue = 0.0f;
@@ -38,10 +38,10 @@ public class GasReaction : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
-
+        Recover();
+        DecayAlert();
     }
 
     public void Decay(float emissionRateConstant)
@@ -56,7 +56,7 @@ public class GasReaction : MonoBehaviour
         grain.size.Override(increasedValue);
     }
 
-    public void Recover(ref ChromaticAberration chromaticAberration, ref Grain grain)
+    public void Recover()
     {
         decayTime -= 1 * Time.deltaTime;
 
@@ -68,7 +68,7 @@ public class GasReaction : MonoBehaviour
         }
     }
     
-    public void DecayAlert(ref ChromaticAberration chromaticAberration, ref Grain grain)
+    public void DecayAlert()
     {
         if (chromaticAberration.intensity.value >= 0.7f && !alerted)
         {
