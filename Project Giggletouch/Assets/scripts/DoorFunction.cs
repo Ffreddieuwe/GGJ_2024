@@ -6,8 +6,7 @@ using UnityEngine.Rendering.PostProcessing;
 public class DoorFunction : MonoBehaviour
 {
     public Animator door = null;
-
-    public AnimationEvent[] events;
+    public GameObject DoorTrigger;
     public bool OpenAnimation = false;
     public bool CloseAnimation = false;
 
@@ -25,6 +24,7 @@ public class DoorFunction : MonoBehaviour
             if (OpenAnimation == true)
             {
                 door.Play("OpenDoor", 0, 0.0f);
+                DoorTrigger.SetActive(false);
             }
             else if (CloseAnimation == true)
             {
