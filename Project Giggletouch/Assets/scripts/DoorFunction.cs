@@ -5,14 +5,12 @@ using UnityEngine.Rendering.PostProcessing;
 
 public class DoorFunction : MonoBehaviour
 {
-    public AnimationEvent[] events;
-    public bool OpenDoor;
+    public Animator door = null;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public AnimationEvent[] events;
+    public bool OpenAnimation = false;
+    public bool CloseAnimation = false;
+
 
     // Update is called once per frame
     void Update()
@@ -20,28 +18,18 @@ public class DoorFunction : MonoBehaviour
         
     }
 
-    private void OnTrigger(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") /*&& Input.GetKeyDown("E")*/)
         {
-            if (Input.GetKeyDown ("e"))
+            if (OpenAnimation == true)
             {
-                if (OpenDoor == false)
-                {
-
-
-                    OpenDoor = true;
-                }
-                else
-                {
-
-                    OpenDoor = false;
-                }
+                door.Play("OpenDoor", 0, 0.0f);
             }
-            
-
-
-
+            else if (CloseAnimation == true)
+            {
+                door.Play("DoorClose", 0, 0.0f);
+            }
         }
     }
 }
