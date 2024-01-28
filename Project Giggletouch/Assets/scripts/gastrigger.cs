@@ -9,11 +9,15 @@ public class gastrigger : MonoBehaviour
     private ParticleSystem.EmissionModule emissionModule;
 
     public GasReaction gasReaction;
+    public GameObject mainCamera;
 
 
     private void Start()
     {
-        gasReaction = GameObject.Find("Main Camera").GetComponent<GasReaction>;
+        mainCamera = GameObject.Find("Main Camera");
+        gasReaction = mainCamera.GetComponent<GasReaction>();
+
+         
         particleSystem = GetComponent<ParticleSystem>();    
     }
     private void OnTriggerStay(Collider other)
