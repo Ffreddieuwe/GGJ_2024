@@ -16,9 +16,9 @@ public class GasReaction : MonoBehaviour
     public AudioClip audioClip;
     public AudioSource audioSource;
     public float volume = 0.5f;
-    private bool alerted = false;
+    public bool alerted = false;
 
-    public float decayRate = 0.05f;
+    public float decayRate = 0.1f;
     public float decayTime = 5.0f;
     public bool inGas = false;
     public float increasedValue = 0.0f;
