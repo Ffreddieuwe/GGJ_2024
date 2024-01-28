@@ -3699,6 +3699,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 382526482}
+  - {fileID: 1353804508}
   - {fileID: 1175785189}
   - {fileID: 884861982}
   - {fileID: 647887916}
@@ -9135,6 +9136,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4346532056029936, guid: 189734b7ba4b82748bbec69269c5d4e9, type: 3}
   m_PrefabInstance: {fileID: 696354505}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &696413185 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4327131915286062016, guid: 201f1e261d896754fa718561dd61a4e1, type: 3}
+  m_PrefabInstance: {fileID: 1348291834}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &697790179
 GameObject:
   m_ObjectHideFlags: 0
@@ -10965,7 +10971,7 @@ VideoPlayer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 804898238}
-  m_Enabled: 1
+  m_Enabled: 0
   m_VideoClip: {fileID: 32900000, guid: 919380793654fe9499a0c44ef9fc614a, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
@@ -12387,6 +12393,7 @@ GameObject:
   m_Component:
   - component: {fileID: 885491746}
   - component: {fileID: 885491745}
+  - component: {fileID: 885491747}
   m_Layer: 0
   m_Name: Final Boss trigger
   m_TagString: Untagged
@@ -12430,6 +12437,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &885491747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885491743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab165210f8263d9459f43f36f4b82579, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BossPanel: {fileID: 804898238}
+  playerSource: {fileID: 696413185}
+  audioClip: {fileID: 8300000, guid: c6988e52e01a7e54db6ab7aa21ef773c, type: 3}
 --- !u!1 &887480837
 GameObject:
   m_ObjectHideFlags: 0
@@ -19071,7 +19093,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2097513488}
+    m_TransformParent: {fileID: 299865160}
     m_Modifications:
     - target: {fileID: 100000, guid: e5e3230248f99f746a40e9791d9c7810, type: 3}
       propertyPath: m_Name
@@ -19079,7 +19101,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e5e3230248f99f746a40e9791d9c7810, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.70000005
+      value: 0.7000001
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e5e3230248f99f746a40e9791d9c7810, type: 3}
       propertyPath: m_LocalScale.y
@@ -19087,19 +19109,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e5e3230248f99f746a40e9791d9c7810, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.70000005
+      value: 0.7000001
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e5e3230248f99f746a40e9791d9c7810, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -87.91785
+      value: 86.78798
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e5e3230248f99f746a40e9791d9c7810, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.7352908
+      value: 18.648527
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e5e3230248f99f746a40e9791d9c7810, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 15.593948
+      value: 68.105125
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e5e3230248f99f746a40e9791d9c7810, type: 3}
       propertyPath: m_LocalRotation.w
@@ -27836,7 +27858,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   door: {fileID: 385879997}
-  events: []
+  DoorTrigger: {fileID: 0}
   OpenAnimation: 1
   CloseAnimation: 0
 --- !u!65 &2009441483
@@ -29414,7 +29436,6 @@ Transform:
   - {fileID: 2012527482}
   - {fileID: 960904966}
   - {fileID: 703555667}
-  - {fileID: 1353804508}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2099259375 stripped
