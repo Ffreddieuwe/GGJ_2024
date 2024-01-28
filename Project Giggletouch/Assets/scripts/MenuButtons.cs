@@ -5,16 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class MenuButtons : MonoBehaviour
 {
-
-
-
-    public void PlayButton()
+    public void Update()
     {
-        SceneManager.LoadScene("level");
-    }
-
-    public void QuitButton()
-    {
-        Application.Quit();
+        if (Input.GetKeyDown("space"))
+        {
+            SceneManager.LoadScene("level");
+        }
+        
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 }
