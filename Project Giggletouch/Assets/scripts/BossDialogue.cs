@@ -12,6 +12,8 @@ public class BossDialogue : MonoBehaviour
     public AudioClip[] voiceClips;
     public GameObject[] bosses;
     public GameObject bossGas;
+    public GameObject invisWall; 
+
 
     public bool played;
     public bool freeze;
@@ -19,6 +21,8 @@ public class BossDialogue : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        invisWall.SetActive(false);
+        freeze = true;
         bossGas.SetActive(false);
         player = GameObject.FindGameObjectWithTag("Player");
         playerAudio = player.GetComponentInChildren<AudioSource>();
@@ -84,6 +88,7 @@ public class BossDialogue : MonoBehaviour
         if (other.CompareTag("Player") && !played)
         {
             playerAudio.Stop();
+            invisWall.SetActive(true);
             if (freeze)
             {
                 player.GetComponent<Player_Movement>().frozen = true;
