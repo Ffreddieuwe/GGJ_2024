@@ -30,7 +30,7 @@ public class Video_Script : MonoBehaviour
             if (!video_player.isPlaying)
             {
                 timer = 5;
-                SceneManager.LoadScene("Menu", LoadSceneMode.Additive);
+                SceneManager.LoadScene("Menu");
             }
         }
     }
