@@ -46,7 +46,7 @@ public class BossDoorBehaviour : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         inZone = false;
-        gameObject.transform.Rotate(0, 0, -90);
+        gameObject.transform.Rotate(0, 0, 0);
         AudioSource.PlayClipAtPoint(doorSlam, transform.position);
     }
 
