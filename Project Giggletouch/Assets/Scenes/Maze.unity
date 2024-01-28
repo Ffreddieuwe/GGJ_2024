@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.16037738, g: 0.16037738, b: 0.16037738, a: 1}
+  m_AmbientSkyColor: {r: 0.34509805, g: 0, b: 0, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -13871,6 +13871,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DICKInjector: {fileID: 960904963}
   LaughAmbience: {fileID: 1182060272}
+  postProcess: {fileID: 11400000, guid: 910077b5c8667b64994cdf3cc196bbef, type: 2}
 --- !u!65 &960904965
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18926,6 +18927,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3112690351908830009, guid: 201f1e261d896754fa718561dd61a4e1, type: 3}
       propertyPath: inGas
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3112690351908830009, guid: 201f1e261d896754fa718561dd61a4e1, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4219878975039303981, guid: 201f1e261d896754fa718561dd61a4e1, type: 3}
