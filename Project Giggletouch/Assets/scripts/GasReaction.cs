@@ -74,7 +74,6 @@ public class GasReaction : MonoBehaviour
         {
             alerted = true;
             audioSource.PlayOneShot(audioClip, volume);
-            Debug.Log("played Audio");
         }
         else if (chromaticAberration.intensity.value <= 0.5f)
         {

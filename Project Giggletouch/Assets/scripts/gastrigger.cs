@@ -8,6 +8,7 @@ public class gastrigger : MonoBehaviour
     public ParticleSystem particleSystem;
     private ParticleSystem.EmissionModule emissionModule;
 
+    
     public GasReaction gasReaction;
     public GameObject mainCamera;
 
@@ -30,7 +31,7 @@ public class gastrigger : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-   
+        
         gasReaction.increasedValue = 0.0f;
         gasReaction.inGas = false; 
     }

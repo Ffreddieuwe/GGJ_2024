@@ -21,6 +21,8 @@ public class Player_Movement : MonoBehaviour
     private bool walking;
     private bool running;
 
+    public bool frozen; 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,16 +40,28 @@ public class Player_Movement : MonoBehaviour
 
     private void FixedUpdate()
     {
+
         running = false;
         walking = false;
 
         float v = Input.GetAxis("Vertical");
         float h = Input.GetAxis("Horizontal");
+
         float turn = Input.GetAxis("Turn");
         bool sprint = Input.GetButton("Sprint");
         bool jump = Input.GetButton("Jump");
 
-        if(v!=0 || h!=0)
+
+        Rotate(turn);
+
+        if (frozen)
+        {
+            v = 0;
+            h = 0;
+           
+        }
+
+        if (v!=0 || h!=0)
         {
             if (sprint)
             {
@@ -66,7 +80,7 @@ public class Player_Movement : MonoBehaviour
 
         AudioManagement();
 
-        Rotate(turn);
+        
 
     }
 
@@ -126,7 +140,7 @@ public class Player_Movement : MonoBehaviour
             if (!audioSource.isPlaying)
             {
                 //audioSource.pitch = 1f;
-                audioSource.PlayOneShot(audioClip);
+               // audioSource.PlayOneShot(audioClip);
             }
         }
         else if (running)
@@ -134,7 +148,7 @@ public class Player_Movement : MonoBehaviour
             if (!audioSource.isPlaying)
             {
 // audioSource.pitch = 1.25f;
-                audioSource.PlayOneShot(audioClip);
+                //audioSource.PlayOneShot(audioClip);
             }
         }
     }

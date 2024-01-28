@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 772361550525456459}
   m_Layer: 0
   m_Name: Gas
-  m_TagString: Untagged
+  m_TagString: gas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4863,9 +4863,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86747564fdb71324ea4e3ac09089c853, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  postProcessProfile: {fileID: 11400000, guid: 910077b5c8667b64994cdf3cc196bbef, type: 2}
-  gasReaction: {fileID: 0}
   particleSystem: {fileID: 0}
-  decayRate: 0.05
-  decayTime: 5
-  increasedValue: 0
+  gasReaction: {fileID: 0}
+  mainCamera: {fileID: 0}

@@ -13,6 +13,9 @@ using System.Collections.Generic;
 /// </summary>
 public class LightFlickerEffect : MonoBehaviour
 {
+    //public AudioClip ambientSound;
+    //public AudioSource ambientSource; 
+
     [Tooltip("External light to flicker; you can leave this null if you attach script to a light")]
     public new Light light;
     [Tooltip("Minimum random light intensity")]
@@ -38,6 +41,11 @@ public class LightFlickerEffect : MonoBehaviour
     {
         smoothQueue.Clear();
         lastSum = 0;
+
+        //ambientSource = GetComponent<AudioSource>();
+        //ambientSource.clip = ambientSound;
+        //ambientSource.loop = true;
+        //ambientSource.Play();
     }
 
     void Start()
@@ -69,5 +77,6 @@ public class LightFlickerEffect : MonoBehaviour
         // Calculate new smoothed average
         light.intensity = lastSum / (float)smoothQueue.Count;
     }
+
 
 }
