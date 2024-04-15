@@ -1,6 +1,6 @@
 Global Game Jam 2024
 
-Came in 4th (1st)
+Came in first place
 
 https://globalgamejam.org/games/2024/c-reeyus-case-giggletouch-gas-factory-7
 
